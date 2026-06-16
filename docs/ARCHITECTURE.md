@@ -204,3 +204,52 @@ Repository:
 
 Database:
 - Stores persistent data
+
+
+## Queue & Background Job Strategy
+
+Long-running tasks are processed by workers.
+
+Flow:
+
+API
+-> Queue
+-> Worker
+-> Database
+
+Jobs:
+
+- Document Processing
+- Embedding Generation
+- Notification Sending
+- Analytics Generation
+- Long Running AI Tasks
+
+Benefits:
+
+- Faster API responses
+- Better scalability
+- More reliable processing
+
+
+## Engineering Rules
+
+1. No business logic in controllers.
+
+2. All database access goes through repositories.
+
+3. All inputs must be validated.
+
+4. All clinic-owned data must be filtered by clinic_id.
+
+5. AI agents cannot access the database directly.
+
+6. AI agents can only use approved tools.
+
+7. Long-running tasks must use queues.
+
+8. Every important action must create an audit log.
+
+9. Every feature must be documented before implementation.
+
+10. Every completed phase must be committed and pushed.
