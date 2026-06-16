@@ -59,3 +59,56 @@ Patients will have login access.
 15. Analytics
 16. Audit Logs
 17. Admin
+
+
+
+## Permission Strategy
+
+Permissions follow the pattern:
+
+resource:action
+
+Examples:
+
+patients:read
+patients:create
+patients:update
+patients:delete
+
+appointments:read
+appointments:create
+appointments:update
+appointments:cancel
+
+documents:upload
+documents:read
+
+ai:chat
+ai:agent
+
+analytics:read
+
+admin:manage
+
+## Role Permissions
+
+SUPER_ADMIN
+- Full access
+
+CLINIC_ADMIN
+- Full access inside own clinic
+
+DOCTOR
+- Read/update assigned patients
+- Manage appointments
+- Use AI features
+
+RECEPTIONIST
+- Manage appointments
+- Register patients
+- Use scheduling tools
+
+PATIENT
+- Access own data only
+- Upload documents
+- Use clinic AI assistant
