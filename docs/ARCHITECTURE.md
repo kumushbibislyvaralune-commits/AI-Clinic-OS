@@ -112,3 +112,95 @@ PATIENT
 - Access own data only
 - Upload documents
 - Use clinic AI assistant
+
+
+## Remaining Design Decisions
+
+Before implementation:
+
+1. Authentication Strategy
+2. Session Strategy
+3. API Architecture
+4. File Storage Strategy
+5. Notification Strategy
+6. Audit Log Strategy
+7. Queue & Background Job Strategy
+8. Deployment Strategy
+
+
+## Authentication Strategy
+
+Authentication uses:
+
+- JWT Access Tokens
+- Refresh Tokens
+- Session Table
+
+Access Token:
+
+- Short lived
+- Used for API requests
+
+Refresh Token:
+
+- Long lived
+- Used to obtain new access tokens
+
+Session Table:
+
+Stores:
+
+- user_id
+- refresh_token_hash
+- device_info
+- ip_address
+- created_at
+- expires_at
+
+Benefits:
+
+- Secure logout
+- Device management
+- Session tracking
+- Token rotation support
+
+
+## API Architecture
+
+Backend requests follow this flow:
+
+Request
+-> Route
+-> Middleware
+-> Controller
+-> Validation
+-> Policy
+-> Service
+-> Repository
+-> Database
+
+Layer responsibilities:
+
+Route:
+- Defines endpoint path and HTTP method
+
+Middleware:
+- Handles authentication, logging, rate limiting, and errors
+
+Controller:
+- Handles request and response
+
+Validation:
+- Validates input data
+
+Policy:
+- Checks permissions and clinic access
+
+Service:
+- Handles business logic
+
+Repository:
+- Handles database queries
+
+Database:
+- Stores persistent data
