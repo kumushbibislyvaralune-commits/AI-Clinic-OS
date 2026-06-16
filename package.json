@@ -1,24 +1,25 @@
 {
   "name": "ai-clinic-os",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "private": true,
+  "description": "Enterprise-level AI Clinic SaaS with multi-tenancy, RAG, and AI agents.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "echo \"Run app-specific dev scripts\"",
+    "build": "echo \"Build all workspaces\"",
+    "lint": "echo \"Lint all workspaces\"",
+    "test": "echo \"Test all workspaces\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kumushbibislyvaralune-commits/AI-Clinic-OS.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/kumushbibislyvaralune-commits/AI-Clinic-OS/issues"
-  },
-  "homepage": "https://github.com/kumushbibislyvaralune-commits/AI-Clinic-OS#readme"
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "keywords": [
+    "ai",
+    "clinic",
+    "saas",
+    "rag",
+    "agent"
+  ],
+  "author": "Kumushbibi",
+  "license": "MIT"
 }
